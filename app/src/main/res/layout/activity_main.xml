@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/action_bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="@color/purple_700">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Age Calculator"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:drawableLeft="@drawable/ic_time"-->
+<!--            android:drawableTint="@color/white"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:textSize="25dp"/>-->
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp">-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">   -->
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineSpotShadowColor="@color/black"
+            app:endIconDrawable="@drawable/ic_calender">
+            <!--        app:hintAnimationEnabled="true"-->
+            <EditText
+                android:id="@+id/current_date_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_calender"
+                android:drawableTint="@color/design_default_color_primary_dark"
+                android:hint="Today's Date"
+                android:inputType="date"
+                android:text=""
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineSpotShadowColor="@color/black">
+
+            <EditText
+                android:id="@+id/date_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_calender"
+                android:drawableTint="@color/design_default_color_primary_dark"
+                android:hint="Date of Birth"
+                android:inputType="date"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/time_ip"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawableRight="@drawable/ic_time"-->
+<!--                android:drawableTint="@color/design_default_color_primary_dark"-->
+<!--                android:hint="Time of Birth"-->
+<!--                android:inputType="time"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:visibility="gone"/>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+    </LinearLayout>
+<ScrollView
+    android:layout_below="@id/ll1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_bg"
+            android:padding="5dp"
+            android:text="CALCULATE :"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Age:"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:elevation="5dp"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_btn"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/age_img"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="80dp"
+                    android:src="@drawable/age" />
+
+                <TextView
+                    android:id="@+id/age_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:textSize="90dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/age_year"
+                    android:layout_marginLeft="-22dp"
+                    android:layout_toRightOf="@id/age_year"
+                    android:text="Year"
+                    android:textSize="20dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/age_img">
+
+                    <RelativeLayout
+                        android:layout_width="137dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true">
+
+                        <TextView
+                            android:id="@+id/age_month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="00"
+                            android:textColor="@color/white"
+                            android:textSize="50dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/age_month"
+                            android:layout_marginEnd="-60dp"
+                            android:layout_marginRight="-50dp"
+                            android:layout_toRightOf="@id/age_month"
+                            android:text="Month" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/age_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="35dp"
+                        android:gravity="center_vertical|right"
+                        android:text="00"
+                        android:textColor="@color/white"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/age_day"
+                        android:layout_marginStart="-26dp"
+                        android:layout_marginLeft="-20dp"
+                        android:layout_toRightOf="@id/age_day"
+                        android:text="Day" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!--    Next Birthday-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/age"
+            android:layout_marginTop="20dp"
+            android:text="Next Birthday:"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/next_bday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/age"
+            android:layout_marginTop="55dp"
+            android:elevation="5dp"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_btn"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/cake_img"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cake" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/next_b_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textColor="@color/white"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/next_b_month"
+                        android:layout_toRightOf="@id/next_b_month"
+                        android:text="Month" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/next_b_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:gravity="center_vertical|right"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:textSize="50dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/next_b_day"
+                    android:layout_marginStart="-40dp"
+                    android:layout_marginLeft="-40dp"
+                    android:layout_toRightOf="@id/next_b_day"
+                    android:text="Day" />
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/next_b_day"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="dd"-->
+                <!--                android:textSize="30dp"-->
+                <!--                android:textColorHighlight="@color/primary"/>-->
+                <!--            <TextView-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="Day"-->
+                <!--                android:layout_toRightOf="@id/next_b_day"-->
+                <!--                android:layout_marginTop="18dp"/>-->
+                <!--            <RelativeLayout-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_centerInParent="true">-->
+                <!--                <TextView-->
+                <!--                    android:id="@+id/next_b_month"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="mm"-->
+                <!--                    android:textSize="30dp"-->
+                <!--                    android:textColorHighlight="@color/primary"-->
+                <!--                    android:layout_marginRight="60dp"/>-->
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Month"-->
+                <!--                    android:layout_toRightOf="@id/next_b_month"-->
+                <!--                    android:layout_marginTop="18dp"-->
+                <!--                    android:layout_marginStart="-60dp"-->
+                <!--                    android:layout_marginLeft="-50dp" />-->
+                <!--            </RelativeLayout>-->
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--Summary-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/next_bday"
+            android:layout_marginTop="20dp"
+            android:text="Summary of Age:"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/next_bday"
+            android:layout_marginTop="55dp"
+            android:elevation="5dp"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_btn"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/abc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Calculate Age in -"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+                <View android:layout_width="2dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/abc"
+                    android:background="@color/white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp" />
+
+                <GridLayout
+                    android:layout_below="@id/abc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:columnCount="2"
+                    android:rowCount="3">
+
+                    <TextView
+                        android:id="@+id/result_months"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00 Months"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:id="@+id/result_weeks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00 Weeks"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:id="@+id/result_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00 Days"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:layout_row="2"
+                        android:layout_column="0"/>
+<!--                    ....................................-->
+                    <TextView
+                        android:id="@+id/result_hours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00 Hours"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="end"/>
+                    <TextView
+                        android:id="@+id/result_min"
+                        android:layout_below="@id/result_hours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00 Minutes"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:layout_row="1"
+                        android:layout_column="1"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="end"/>
+                    <TextView
+                        android:id="@+id/result_sec"
+                        android:layout_below="@id/result_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00 Seconds"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:layout_row="2"
+                        android:layout_column="1"
+                        android:layout_gravity="end"/>
+                </GridLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>
+
+</RelativeLayout>
